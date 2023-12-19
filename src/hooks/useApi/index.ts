@@ -5,10 +5,10 @@ export const useApi = () => {
     url.searchParams.append('data', JSON.stringify(payload));
 
     const response = await fetch(url.href);
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
     const responseJSON = await response.json();
+    if (!response.ok) {
+      throw new Error(responseJSON.message);
+    }
 
     return responseJSON;
   };

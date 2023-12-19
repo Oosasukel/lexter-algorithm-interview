@@ -13,18 +13,22 @@ export async function GET(request: Request) {
   } catch (err) {
     if (err instanceof Error) {
       if (err.cause === ErrorCause.ENTRY_NOT_FOUND) {
-        return Response.json(null, {
-          status: 400,
-          statusText: err.message,
-        });
+        return Response.json(
+          { message: err.message },
+          {
+            status: 400,
+          }
+        );
       } else {
-        return Response.json(null, {
-          status: 400,
-          statusText: 'Incorrect input format',
-        });
+        return Response.json(
+          { message: 'Incorrect input format' },
+          {
+            status: 400,
+          }
+        );
       }
     }
 
-    return Response.json(null, { status: 500 });
+    return Response.json({ message: 'Internal server error' }, { status: 500 });
   }
 }
