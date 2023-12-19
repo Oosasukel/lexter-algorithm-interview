@@ -4,6 +4,14 @@ Este projeto é uma aplicação web construída utilizando Next.js, Typescript, 
 
 Demo: https://lexter-algorithm-interview.vercel.app
 
+## Endpoint de Conversão
+
+Além da interface web, foi criado um endpoint para realizar a conversão diretamente. Você pode acessá-lo em [https://lexter-algorithm-interview.vercel.app/api/convert](https://lexter-algorithm-interview.vercel.app/api/convert). Utilize o método GET e passe o array a ser convertido no query parameter "data".
+
+Exemplo:
+
+https://lexter-algorithm-interview.vercel.app/api/convert?data=[SEU_ARRAY_AQUI]
+
 ## Instalação
 
 Certifique-se de ter o Node.js instalado em seu sistema. Em seguida, clone este repositório e execute o seguinte comando no terminal para instalar as dependências:
